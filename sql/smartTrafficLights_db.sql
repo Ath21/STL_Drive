@@ -18,6 +18,7 @@ CREATE TABLE IF NOT EXISTS TrafficLight (
     greenDuration INT NOT NULL CHECK (greenDuration > 0),
     orangeDuration INT NOT NULL CHECK (orangeDuration > 0),
     redDuration INT NOT NULL CHECK (redDuration > 0),
+    lightType ENUM('Standard', 'Pedestrian', 'Cyclist') NOT NULL, 
     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (intersectionId) REFERENCES Intersection(intersectionId) ON DELETE CASCADE
@@ -110,7 +111,14 @@ CREATE TABLE IF NOT EXISTS RealTimeSynchronization (
     FOREIGN KEY (light2Id) REFERENCES TrafficLight(lightId) ON DELETE CASCADE
 );
 
--- 12. Users Table
+-- 12. User Role Table
+CREATE TABLE IF NOT EXISTS UserRole (
+    roleId INT AUTO_INCREMENT PRIMARY KEY,
+    roleName VARCHAR(50) UNIQUE NOT NULL,
+    roleDescription VARCHAR(100)
+);
+
+-- 13. Users Table (Updated to reference UserRole)
 CREATE TABLE IF NOT EXISTS User (
     userId INT AUTO_INCREMENT PRIMARY KEY,
     firstName VARCHAR(50) NOT NULL,
@@ -119,12 +127,13 @@ CREATE TABLE IF NOT EXISTS User (
     email VARCHAR(100) UNIQUE NOT NULL,
     username VARCHAR(50) UNIQUE NOT NULL,
     passwordHash TEXT NOT NULL,
-    role ENUM('Admin', 'Traffic Controller', 'Operator') DEFAULT 'Traffic Controller',
+    roleId INT UNIQUE, -- 1:1 Relationship with UserRole
     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (roleId) REFERENCES UserRole(roleId) ON DELETE SET NULL
 );
 
--- 13. User Actions Log Table
+-- 14. User Actions Log Table
 CREATE TABLE IF NOT EXISTS UserActionLog (
     logId INT AUTO_INCREMENT PRIMARY KEY,
     userId INT NOT NULL,

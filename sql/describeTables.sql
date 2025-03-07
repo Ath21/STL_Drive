@@ -14,3 +14,4 @@ DESCRIBE TrafficLight;
 DESCRIBE RealTimeSynchronization;
 DESCRIBE User;
 DESCRIBE UserActionLog;
+DESCRIBE UserRole;
