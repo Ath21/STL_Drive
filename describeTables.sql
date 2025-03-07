@@ -1,4 +1,5 @@
 -- Describe all tables with proper aliases
+USE SmartTrafficLights;
 
 DESCRIBE Intersection;
 DESCRIBE TrafficSensor;

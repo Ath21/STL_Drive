@@ -102,6 +102,7 @@ CREATE TABLE IF NOT EXISTS User (
     firstName VARCHAR(50) NOT NULL,
     lastName VARCHAR(50) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
+    username VARCHAR(50) UNIQUE NOT NULL,
     passwordHash TEXT NOT NULL,
     role ENUM('Admin', 'Traffic Controller', 'Operator') DEFAULT 'Traffic Controller',
     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
