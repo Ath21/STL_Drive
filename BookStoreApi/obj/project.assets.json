@@ -1035,24 +1035,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\billa\\.nuget\\packages\\": {}
+    "C:\\Users\\Ath\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\REPOS\\Smart-Traffic-Lights\\BookStoreApi\\BookStoreApi.csproj",
+      "projectUniqueName": "C:\\Users\\Ath\\Downloads\\Smart-Traffic-Lights\\BookStoreApi\\BookStoreApi.csproj",
       "projectName": "BookStoreApi",
-      "projectPath": "F:\\REPOS\\Smart-Traffic-Lights\\BookStoreApi\\BookStoreApi.csproj",
-      "packagesPath": "C:\\Users\\billa\\.nuget\\packages\\",
-      "outputPath": "F:\\REPOS\\Smart-Traffic-Lights\\BookStoreApi\\obj\\",
+      "projectPath": "C:\\Users\\Ath\\Downloads\\Smart-Traffic-Lights\\BookStoreApi\\BookStoreApi.csproj",
+      "packagesPath": "C:\\Users\\Ath\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ath\\Downloads\\Smart-Traffic-Lights\\BookStoreApi\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\billa\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Ath\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
