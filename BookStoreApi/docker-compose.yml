@@ -1,0 +1,25 @@
+services:
+  bookstoreapi:
+    image: bookstoreapi:latest
+    container_name: bookstoreapi_container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '5000:80'
+    environment:
+      - APSNETCORE_ENVIRONMENT=Production
+      - MONGO_CONNECTION_STRING=mongodb://mongo:27017
+    depends_on:
+      - mongodb
+  
+  mongodb:
+    image: mongodb/mongodb-community-server:latest
+    container_name: mongodb_container
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongodbdata:/data/db
+
+volumes:
+  mongodbdata:

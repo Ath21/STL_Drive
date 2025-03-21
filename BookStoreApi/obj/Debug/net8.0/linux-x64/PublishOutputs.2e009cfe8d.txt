@@ -1,0 +1,17 @@
+/home/ath/Desktop/BookStoreApi/bin/Debug/net8.0/linux-x64/publish/BookStoreApi
+/home/ath/Desktop/BookStoreApi/bin/Debug/net8.0/linux-x64/publish/appsettings.Development.json
+/home/ath/Desktop/BookStoreApi/bin/Debug/net8.0/linux-x64/publish/appsettings.json
+/home/ath/Desktop/BookStoreApi/bin/Debug/net8.0/linux-x64/publish/BookStoreApi.dll
+/home/ath/Desktop/BookStoreApi/bin/Debug/net8.0/linux-x64/publish/BookStoreApi.deps.json
+/home/ath/Desktop/BookStoreApi/bin/Debug/net8.0/linux-x64/publish/BookStoreApi.runtimeconfig.json
+/home/ath/Desktop/BookStoreApi/bin/Debug/net8.0/linux-x64/publish/BookStoreApi.pdb
+/home/ath/Desktop/BookStoreApi/bin/Debug/net8.0/linux-x64/publish/DnsClient.dll
+/home/ath/Desktop/BookStoreApi/bin/Debug/net8.0/linux-x64/publish/Microsoft.OpenApi.dll
+/home/ath/Desktop/BookStoreApi/bin/Debug/net8.0/linux-x64/publish/MongoDB.Bson.dll
+/home/ath/Desktop/BookStoreApi/bin/Debug/net8.0/linux-x64/publish/MongoDB.Driver.dll
+/home/ath/Desktop/BookStoreApi/bin/Debug/net8.0/linux-x64/publish/SharpCompress.dll
+/home/ath/Desktop/BookStoreApi/bin/Debug/net8.0/linux-x64/publish/Snappier.dll
+/home/ath/Desktop/BookStoreApi/bin/Debug/net8.0/linux-x64/publish/Swashbuckle.AspNetCore.Swagger.dll
+/home/ath/Desktop/BookStoreApi/bin/Debug/net8.0/linux-x64/publish/Swashbuckle.AspNetCore.SwaggerGen.dll
+/home/ath/Desktop/BookStoreApi/bin/Debug/net8.0/linux-x64/publish/Swashbuckle.AspNetCore.SwaggerUI.dll
+/home/ath/Desktop/BookStoreApi/bin/Debug/net8.0/linux-x64/publish/ZstdSharp.dll
