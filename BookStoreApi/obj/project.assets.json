@@ -1035,19 +1035,19 @@
     ]
   },
   "packageFolders": {
-    "/home/ath/.nuget/packages/": {}
+    "C:\\Users\\billa\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/ath/Desktop/BookStoreApi/BookStoreApi.csproj",
+      "projectUniqueName": "F:\\REPOS\\Smart-Traffic-Lights\\BookStoreApi\\BookStoreApi.csproj",
       "projectName": "BookStoreApi",
-      "projectPath": "/home/ath/Desktop/BookStoreApi/BookStoreApi.csproj",
-      "packagesPath": "/home/ath/.nuget/packages/",
-      "outputPath": "/home/ath/Desktop/BookStoreApi/obj/",
+      "projectPath": "F:\\REPOS\\Smart-Traffic-Lights\\BookStoreApi\\BookStoreApi.csproj",
+      "packagesPath": "C:\\Users\\billa\\.nuget\\packages\\",
+      "outputPath": "F:\\REPOS\\Smart-Traffic-Lights\\BookStoreApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/ath/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\billa\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -1065,7 +1065,13 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -1091,6 +1097,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.14, 8.0.14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[8.0.14, 8.0.14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.14, 8.0.14]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.14, 8.0.14]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -1099,7 +1123,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.114/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
