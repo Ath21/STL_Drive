@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: traffic-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: traffic-service
+  template:
+    metadata:
+      labels:
+        app: traffic-service
+    spec:
+      containers:
+      - name: traffic-service
+        image: your-registry/traffic-service:latest
+        ports:
+        - containerPort: 5001
+        env:
+        - name: RabbitMQ__ConnectionString
+          valueFrom:
+            secretKeyRef:
+              name: rabbitmq-connection-string
+              key: connection-string

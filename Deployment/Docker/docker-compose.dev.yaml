@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  user-service:
+    build:
+      context: ./services/user-service
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - CONNECTION_STRING=${USER_SERVICE_CONNECTION_STRING}
+    volumes:
+      - ./services/user-service:/app
+    ports:
+      - 5000:5000
+
+  traffic-service:
+    build:
+      context: ./services/traffic-service
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - CONNECTION_STRING=${TRAFFIC_SERVICE_CONNECTION_STRING}
+    volumes:
+      - ./services/traffic-service:/app
+    ports:
+      - 5001:5001
+
+  # Repeat similarly for vehicle-service, notification-service, api-gateway...
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=${SA_PASSWORD}
+    volumes:
+      - sql_data:/var/opt/mssql
+    ports:
+      - "1433:1433"
+
+  # Include RabbitMQ and MongoDB configurations here...
+
+volumes:
+  sql_data:

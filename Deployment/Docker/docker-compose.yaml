@@ -1,0 +1,110 @@
+version: '3.8'
+
+services:
+  user-service:
+    build:
+      context: ./services/user-service
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - CONNECTION_STRING=${USER_SERVICE_CONNECTION_STRING}
+    ports:
+      - 5000:5000
+    depends_on:
+      - sqlserver
+    networks:
+      - smart-traffic-network
+
+  traffic-service:
+    build:
+      context: ./services/traffic-service
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - CONNECTION_STRING=${TRAFFIC_SERVICE_CONNECTION_STRING}
+    ports:
+      - 5001:5001
+    depends_on:
+      - sqlserver
+      - mongodb
+    networks:
+      - smart-traffic-network
+
+  vehicle-service:
+    build:
+      context: ./services/vehicle-service
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - CONNECTION_STRING=${VEHICLE_SERVICE_CONNECTION_STRING}
+    ports:
+      - 5002:5002
+    depends_on:
+      - sqlserver
+      - mongodb
+    networks:
+      - smart-traffic-network
+
+  notification-service:
+    build:
+      context: ./services/notification-service
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - 5003:5003
+    depends_on:
+      - rabbitmq
+    networks:
+      - smart-traffic-network
+
+  api-gateway:
+    build:
+      context: ./services/api-gateway
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - 80:80
+    depends_on:
+      - user-service
+      - traffic-service
+      - vehicle-service
+      - notification-service
+    networks:
+      - smart-traffic-network
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=${SA_PASSWORD}
+    networks:
+      - smart-traffic-network
+    volumes:
+      - sql_data:/var/opt/mssql
+    ports:
+      - "1433:1433"
+
+  mongodb:
+    image: mongo:latest
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+    networks:
+      - smart-traffic-network
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - "27017:27017"
+
+  rabbitmq:
+    image: rabbitmq:management
+    networks:
+      - smart-traffic-network
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+
+networks:
+  smart-traffic-network:
+    driver: bridge
+
+volumes:
+  sql_data:
+  mongo_data:

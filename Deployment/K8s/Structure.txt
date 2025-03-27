@@ -1,0 +1,19 @@
+k8s/
+│── deployments/
+│   │── user-service.yaml
+│   │── traffic-service.yaml
+│   │── vehicle-service.yaml
+│   │── notification-service.yaml
+│   │── api-gateway.yaml
+│── services/
+│   │── user-service-service.yaml
+│   │── traffic-service-service.yaml
+│   │── vehicle-service-service.yaml
+│   │── notification-service-service.yaml
+│   │── api-gateway-service.yaml
+│── infrastructure/
+│   │── sqlserver.yaml
+│   │── rabbitmq.yaml
+│   │── redis.yaml
+│   │── mongodb.yaml
+│   │── mongodb-service.yaml

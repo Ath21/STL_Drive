@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vehicle-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: vehicle-service
+  template:
+    metadata:
+      labels:
+        app: vehicle-service
+    spec:
+      containers:
+      - name: vehicle-service
+        image: your-registry/vehicle-service:latest
+        ports:
+        - containerPort: 5002
+        env:
+        - name: Redis__ConnectionString
+          valueFrom:
+            secretKeyRef:
+              name: redis-connection-string
+              key: connection-string

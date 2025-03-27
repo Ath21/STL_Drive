@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  user-service:
+    image: user-service:latest
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - CONNECTION_STRING=${USER_SERVICE_CONNECTION_STRING}
+    ports:
+      - 5000:5000
+
+  traffic-service:
+    image: traffic-service:latest
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - CONNECTION_STRING=${TRAFFIC_SERVICE_CONNECTION_STRING}
+    ports:
+      - 5001:5001
+
+  # Repeat similarly for other services...
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=${SA_PASSWORD}
+    ports:
+      - "1433:1433"
+
+  # Include RabbitMQ and MongoDB services...

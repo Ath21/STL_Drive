@@ -1,0 +1,26 @@
+smart-traffic/
+│── services/
+│   │── user-service/
+│   │   │── Dockerfile
+│   │   │── appsettings.json
+│   │   │── UserService.csproj
+│   │── traffic-service/
+│   │   │── Dockerfile
+│   │   │── appsettings.json
+│   │   │── TrafficService.csproj
+│   │── vehicle-service/
+│   │   │── Dockerfile
+│   │   │── appsettings.json
+│   │   │── VehicleService.csproj
+│   │── notification-service/
+│   │   │── Dockerfile
+│   │   │── appsettings.json
+│   │   │── NotificationService.csproj
+│   │── api-gateway/
+│   │   │── Dockerfile
+│   │   │── appsettings.json
+│   │   │── ApiGateway.csproj
+│── docker-compose.yml
+│── docker-compose.dev.yaml
+│── docker-compose.prod.yaml
+│── .env
